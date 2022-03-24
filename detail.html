@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>请假申请 - 学生工作信息管理系统</title>
+    <link rel="shortcut icon" href="https://sams.nottingham.edu.cn/Content/image/favicon.ico" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/pace/themes/red/pace-theme-flash.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/layer/theme/default/layer.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/adminlte/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/adminlte/css/skins/skin-blue.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Content/common.css" rel="stylesheet" />
+    <script src="https://sams.nottingham.edu.cn/Scripts/pace/pace.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-3.3.1.min.js"></script>
+    
+    <script src="https://sams.nottingham.edu.cn/Scripts/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/adminlte/js/adminlte.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-validation/jquery.validate.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-validation/localization/messages_zh.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-validate.unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/layer/layer.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/bootbox.min.js"></script>
+    <script type="text/javascript">
+        $.validator.methods.date = function (value, element) {
+            var matches = /(\d{4})[-\/](\d{2})[-\/](\d{2})/.exec(value);
+            if (matches == null) return this.optional(element) || false;
+            return this.optional(element) || true;
+        };
+    </script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini fixed">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><img src="https://sams.nottingham.edu.cn/Content/image/logo1.png" /></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><img src="https://sams.nottingham.edu.cn/Content/image/logo.png" /></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/avatar.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs" id="nametop"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="/avatar.jpg" class="img-circle" alt="User Image">
+                                    
+                                </li>
+                                <!-- Menu Body -->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    
+                                    <div class="pull-right">
+                                        <a href="" class="btn btn-default btn-flat">注 销</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn-group pull-right" style="padding:8px;">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="">中文</a></li>
+                        <li><a href="">English</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                
+                <!-- search form -->
+                
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu" data-widget="tree">
+        
+        
+        <li data-code="dorm_index">
+            <a href="">
+                <i class="fa fa-building"></i>
+                <span>我的宿舍</span>
+            </a>
+        </li>
+        <li class="treeview" data-code="person">
+            <a href="javascript:">
+                <i class="fa fa-address-book-o"></i>
+                <span>个人中心</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li data-code="student_edit"><a href=""><i class="fa"></i>基础信息</a></li>
+            </ul>
+        </li>
+        <li class="treeview" data-code="apply">
+            <a href="javascript:">
+                <i class="fa fa-hourglass"></i>
+                <span>我的申请</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li data-code="stuaskforleave_index"><a href=""><i class="fa"></i>请假申请</a></li>
+                <li data-code="stuaskfordeparture_index"><a href=""><i class="fa"></i>离校申请</a></li>
+                <li data-code="stuaskforback_index"><a href=""><i class="fa"></i>返校申请</a></li>
+            </ul>
+        </li>
+    </ul>
+
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    请假申请
+                    
+                </h1>
+                
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="box box-info" style="padding:10px;">
+                    
+
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2">申请人</label>
+            <div class="col-md-10 form-control-static" id="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">开始时间</label>
+            <div class="col-md-10 form-control-static" id="start">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">结束时间</label>
+            <div class="col-md-10 form-control-static" id="end">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">请假原因</label>
+            <div class="col-md-10 form-control-static" id="reason">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">附件</label>
+            <input type="hidden" name="txt_Attachment" id="txt_Attachment" />
+            <div class="col-md-10 detailImgListBox">
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">请假状态</label>
+            <div class="col-md-10 form-control-static">
+                <label class="label label-success">通过</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">申请日期</label>
+            <div class="col-md-10 form-control-static" id="apply">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">审核记录</label>
+            <div class="col-md-10 form-control-static">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>审核人</th>
+                            <th>审核时间</th>
+                            <th>审核状态</th>
+                            <th>审核意见</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td id="teacher"></td>
+                                <td id="approve"></td>
+                                <td>通过</td>
+                                <td></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<div>
+    <a href="" id="back">返回列表</a>
+</div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.4.0
+            </div>
+            <strong>Copyright &copy; 2018-2020 </strong> All rights
+            reserved.
+        </footer>
+    </div>
+
+<!-- 我叫胡图图，今年三岁。我的爸爸叫胡英俊，我的妈妈叫张小丽。我家住在翻斗花园二号楼一零零一室。
+
+     做假SAMS网站的初衷在于方便学生紧急情况下减少流程出入校门，不作他用。本仓库和GitHub账号不对任何使用本网页的行为及后果负责。
+     本网页只是静态网页，所有代码开源且十分简单，不必担心数据泄露。使用方法让你们的学计算机的朋友教你们。祝你们出入平安。
+     
+     我一个做假网站的都想喷这个写SAMS的垃圾公司，套模版都不把模版上的字去掉。有兴趣的自己去看SAMS系统的HTML源文件，真的很搞笑。
+
+     贵校维护人员终于注意到你们的文件连权限都不需要就能访问啦？你知道SAMS系统把所有学生的照片暴露在公网上是多么弱智的一件事吗？
+     贵校就是这样保护学生隐私的吗？
+
+     希望贵校以后用心找外包公司，实在不行这些系统找本校计算机学生做都可以。我保证贵校顶尖计算机学生，
+     甚至打算转码农的其他专业学生都比外面那些小公司的员工开发能力强多了。
+
+     学费真的不便宜，但是从细节来看，你们并没有做得很好。希望你们之后的某一年看到这段话之后可以反思。
+
+     胡图图 2022年3月24日
+    -->
+
+
+<script>
+// https://github.com/suulnnka/BullshitGenerator
+function 获取网址参数(参数) {
+return new URL(window.location.href).searchParams.get(参数);
+}
+
+function 获取全部参数() {
+return window.location.search;
+}
+
+document.getElementById('nametop').innerHTML = 获取网址参数('申请人');
+document.getElementById('name').innerHTML = 获取网址参数('申请人');
+document.getElementById('start').innerHTML = 获取网址参数('开始时间');
+document.getElementById('end').innerHTML = 获取网址参数('结束时间');
+document.getElementById('reason').innerHTML = 获取网址参数('请假原因');
+document.getElementById('apply').innerHTML = 获取网址参数('申请日期');
+document.getElementById('approve').innerHTML = 获取网址参数('审核时间');
+document.getElementById('teacher').innerHTML = 获取网址参数('审核人');
+
+document.getElementById('back').href = '/student.html' + 获取全部参数();
+
+</script>
+
+</body>
+</html>

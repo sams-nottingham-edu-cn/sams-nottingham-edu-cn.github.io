@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>请假申请 - 学生工作信息管理系统</title>
+    <link rel="shortcut icon" href="https://sams.nottingham.edu.cn/Content/image/favicon.ico" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/pace/themes/red/pace-theme-flash.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/layer/theme/default/layer.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/adminlte/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Scripts/adminlte/css/skins/skin-blue.min.css" rel="stylesheet" />
+    <link href="https://sams.nottingham.edu.cn/Content/common.css" rel="stylesheet" />
+    <script src="https://sams.nottingham.edu.cn/Scripts/pace/pace.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-3.3.1.min.js"></script>
+    
+    <script src="https://sams.nottingham.edu.cn/Scripts/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/adminlte/js/adminlte.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-validation/jquery.validate.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-validation/localization/messages_zh.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/jquery-validate.unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/layer/layer.js"></script>
+    <script src="https://sams.nottingham.edu.cn/Scripts/bootbox.min.js"></script>
+    <script type="text/javascript">
+        $.validator.methods.date = function (value, element) {
+            var matches = /(\d{4})[-\/](\d{2})[-\/](\d{2})/.exec(value);
+            if (matches == null) return this.optional(element) || false;
+            return this.optional(element) || true;
+        };
+    </script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini fixed">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="https://sams.nottingham.edu.cn/zh/Students" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><img src="https://sams.nottingham.edu.cn/Content/image/logo1.png" /></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><img src="https://sams.nottingham.edu.cn/Content/image/logo.png" /></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="/avatar.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs" id="nametop"> </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="/avatar.jpg" class="img-circle" alt="User Image">
+                                    
+                                </li>
+                                <!-- Menu Body -->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    
+                                    <div class="pull-right">
+                                        <a href="" class="btn btn-default btn-flat">注 销</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn-group pull-right" style="padding:8px;">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">中文 <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="">中文</a></li>
+                        <li><a href="">English</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                
+                <!-- search form -->
+                
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu" data-widget="tree">
+        
+        
+        <li data-code="dorm_index">
+            <a href="">
+                <i class="fa fa-building"></i>
+                <span>我的宿舍</span>
+            </a>
+        </li>
+        <li class="treeview" data-code="person">
+            <a href="javascript:">
+                <i class="fa fa-address-book-o"></i>
+                <span>个人中心</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li data-code="student_edit"><a href=""><i class="fa"></i>基础信息</a></li>
+            </ul>
+        </li>
+        <li class="treeview" data-code="apply">
+            <a href="javascript:">
+                <i class="fa fa-hourglass"></i>
+                <span>我的申请</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li data-code="stuaskforleave_index"><a href=""><i class="fa"></i>请假申请</a></li>
+                <li data-code="stuaskfordeparture_index"><a href=""><i class="fa"></i>离校申请</a></li>
+                <li data-code="stuaskforback_index"><a href=""><i class="fa"></i>返校申请</a></li>
+            </ul>
+        </li>
+    </ul>
+
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    请假申请
+                    
+                </h1>
+                
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="box box-info" style="padding:10px;">
+                    
+
+<div class="row toolbar">
+    <form method="get" id="searchForm">
+        <div class="col-md-4">
+            <div class="input-group">
+                <input class="form-control" id="keywords" name="keywords" placeholder="请输入要查询关键字" type="text" value="" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;查询</button>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-8 text-right">
+            <a class="btn btn-success" href=""><i class="fa fa-plus"></i>&nbsp;新增</a>
+        </div>
+    </form>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">
+                <input type="checkbox" id="selectAll" autocomplete="off" />
+            </th>
+            <th>
+                开始时间
+            </th>
+            <th>
+                结束时间
+            </th>
+            <th>
+                请假原因
+            </th>
+            <th>
+                请假状态
+            </th>
+            <th>
+                申请日期
+            </th>
+            <th>管理</th>
+        </tr>
+        
+            <tr>
+                <td class="text-center">
+                    <input type="checkbox" name="id" autocomplete="off" />
+                </td>
+                <td id="start"></td>
+                <td id="end"></td>
+                <td id="reason"></td>
+                <td>
+                    <label class="label label-success">通过</label>
+                </td>
+                <td id="apply"></td>
+                <td>
+                    <a class="btn btn-success btn-xs" href="" id="forward"><i class="fa fa-search-plus"></i>&nbsp;查看</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">
+                    <input type="checkbox" name="id" autocomplete="off" />
+                </td>
+                <td>
+                    2020-06-18 19:00
+                </td>
+                <td>
+                    2020-06-18 23:00
+                </td>
+                <td>
+                    外出补习
+                </td>
+                <td>
+                    <label class="label label-success">通过</label>
+                </td>
+                <td>
+                    2020-06-17 09:25
+                </td>
+                <td>
+                    <a class="btn btn-success btn-xs" href=""><i class="fa fa-search-plus"></i>&nbsp;查看</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">
+                    <input type="checkbox" name="id" autocomplete="off" />
+                </td>
+                <td>
+                    2020-06-14 12:00
+                </td>
+                <td>
+                    2020-06-14 15:00
+                </td>
+                <td>
+                    外出吃饭
+                </td>
+                <td>
+                    <label class="label label-success">通过</label>
+                </td>
+                <td>
+                    2020-06-13 08:35
+                </td>
+                <td>
+                    <a class="btn btn-success btn-xs" href=""><i class="fa fa-search-plus"></i>&nbsp;查看</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">
+                    <input type="checkbox" name="id" autocomplete="off" />
+                </td>
+                <td>
+                    2020-05-12 08:00
+                </td>
+                <td>
+                    2020-05-12 23:59
+                </td>
+                <td>
+                    外出采购
+                </td>
+                <td>
+                    <label class="label label-success">通过</label>
+                </td>
+                <td>
+                    2020-05-11 23:12
+                </td>
+                <td>
+                    <a class="btn btn-success btn-xs" href=""><i class="fa fa-search-plus"></i>&nbsp;查看</a>
+                </td>
+            </tr>
+    </table>
+</div>
+<div class="row"><div class="col-sm-6 text-left">
+<div class="pagination">当前第 1 页，共 4 条记录，每页 <select id="pageSize" name="pageSize" class="pageSize" autocomplete="off">
+<option value="10" data-url="" selected="selected">10</option>
+<option value="20" data-url="">20</option>
+<option value="30" data-url="">30</option>
+<option value="40" data-url="">40</option>
+<option value="50" data-url="">50</option>
+</select>
+ 条</div>
+</div>
+<div class="col-sm-6 text-right">
+<ul class="pagination">
+<li class="prev disabled"><a href="#">上一页</a></li>
+<li class="active"><a href="">1</a></li>
+
+<li class="next disabled"><a href="#">下一页</a></li>
+</ul>
+</div>
+</div>
+
+
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.4.0
+            </div>
+            <strong>Copyright &copy; 2018-2020 </strong> All rights
+            reserved.
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                    <h3 class="control-sidebar-heading">Recent Activity</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                    <p>Will be 23 on April 24th</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-user bg-yellow"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                                    <p>New phone +1(800)555-1234</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+                                    <p>nora@example.com</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="menu-icon fa fa-file-code-o bg-green"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                                    <p>Execution time 5 seconds</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Custom Template Design
+                                    <span class="label label-danger pull-right">70%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Update Resume
+                                    <span class="label label-success pull-right">95%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Laravel Integration
+                                    <span class="label label-warning pull-right">50%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <h4 class="control-sidebar-subheading">
+                                    Back End Framework
+                                    <span class="label label-primary pull-right">68%</span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Allow mail redirect
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Other sets of options are available
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Expose author name in posts
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Allow the user to show his name in blog posts
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                        <h3 class="control-sidebar-heading">Chat Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Show me as online
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Turn off notifications
+                                <input type="checkbox" class="pull-right">
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Delete chat history
+                                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                            </label>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+<script type="text/javascript">
+// https://github.com/suulnnka/BullshitGenerator
+function 获取网址参数(参数) {
+return new URL(window.location.href).searchParams.get(参数);
+}
+
+function 获取全部参数() {
+return window.location.search;
+}
+
+document.getElementById('nametop').innerHTML = 获取网址参数('申请人');
+// document.getElementById('name').innerHTML = 获取网址参数('申请人');
+document.getElementById('start').innerHTML = 获取网址参数('开始时间');
+document.getElementById('end').innerHTML = 获取网址参数('结束时间');
+document.getElementById('reason').innerHTML = 获取网址参数('请假原因');
+document.getElementById('apply').innerHTML = 获取网址参数('申请日期');
+// document.getElementById('approve').innerHTML = 获取网址参数('审核时间');
+// document.getElementById('teacher').innerHTML = 获取网址参数('审核人');
+
+document.getElementById('forward').href = '/detail.html' + 获取全部参数();
+</script>
+</body>
+</html>
