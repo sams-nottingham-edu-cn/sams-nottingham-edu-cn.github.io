@@ -1,7 +1,15 @@
 # sams-nottingham-edu-cn.github.io
 
-## Usage
+一个模拟SAMS写的简易练习作品。
 
-Simply visit below website to check the result (full line). Change parameters to whatever you like.
+## 使用条款
+
+如果您不同意，请不要使用。一经使用即视为已阅读并同意此处任何条款。
+
+1. 本项目的一切结果都为用户输入，本项目及制作者没有任何意图挑战防疫制度。**制作者不承担任何责任。用户对使用本项目所产生的一切后果负责。**
+
+## 使用方法
+
+复制下面完整的一行、编辑“=”后面的参数并粘贴到浏览器来访问。支持手机版。
 
 https://sams-nottingham-edu-cn.github.io/detail?申请人=你妈&开始时间=2022-03-24 12:00&结束时间=2022-03-24 20:00&请假原因=外出工作面试&申请日期=2022-03-23 20:42&审核人=你妈&审核时间=24/03/2022 11:50:52 AM
